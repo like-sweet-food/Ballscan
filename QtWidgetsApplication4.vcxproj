@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F30E367E-009A-4A88-BB11-0876F3065C12}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <ProjectName>BallScan</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.14.2_msvc2017_64</QtInstall>
+    <QtModules>core;xml;sql;opengl;gui;widgets;concurrent;openglextensions;charts</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.14.2_msvc2017_64</QtInstall>
+    <QtModules>core;xml;sql;opengl;gui;widgets;concurrent;openglextensions;charts</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <TargetName>BallScan</TargetName>
+    <ExecutablePath>..\3part\Qt5.14.2\5.14.2\msvc2017_64\bin;..\3part\opencascade_7.90\install\win64\vc14\bin;..\3part\OSG3.6.5\build\bin;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>..\Vision_1\FTC_TZ\IZ_new_transcode;..\Vision_1\FTC_TZ\include;..\Vision_1\vision_ljs\vision_ljs;..\3part\m_include\uic;..\3part\m_include;..\3part\OSG3.6.5\build\include;..\3part\Qt5.14.2\5.14.2\msvc2017_64\include\QtXlsx;..\3part\opencascade_7.90\install\inc;..\3part\eigen-3.4.0\eigen-3.4.0;..\3part;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3part\opencascade_7.90\install\win64\vc14\lib;..\3part\Qt5.14.2\5.14.2\msvc2017_64\lib;..\3part\OSG3.6.5\build\lib\osgPlugins-3.6.5;..\3part\OSG3.6.5\build\lib\pkgconfig;..\3part\OSG3.6.5\build\lib;..\3part\m_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <TargetName>BallScan</TargetName>
+    <ExecutablePath>..\3part\opencascade_7.90\install\win64\vc14\bin;..\3part\OSG3.6.5\build\bin;D:\test\QtWidgetsApplication4\x64\Release;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>..\Vision_1\FTC_TZ\IZ_new_transcode;..\Vision_1\FTC_TZ\include;..\Vision_1\vision_ljs\vision_ljs;..\3part\m_include\uic;..\3part\m_include;..\3part\OSG3.6.5\build\include;..\3part\Qt5.14.2\5.14.2\msvc2017_64\include\QtXlsx;..\3part\opencascade_7.90\install\inc;..\3part\eigen-3.4.0\eigen-3.4.0;..\3part;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3part\opencascade_7.90\install\win64\vc14\lib;..\3part\Qt5.14.2\5.14.2\msvc2017_64\lib;..\3part\OSG3.6.5\build\lib\osgPlugins-3.6.5;..\3part\OSG3.6.5\build\lib\pkgconfig;..\3part\OSG3.6.5\build\lib;..\3part\m_lib;$(LibraryPath)</LibraryPath>
+    <ExternalIncludePath>D:\test\3part\model;D:\test\3part\Azure Kinect SDK v1.4.2\sdk\include;$(ExternalIncludePath)</ExternalIncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>TKBin.lib;TKBinL.lib;TKBinTObj.lib;TKBinXCAF.lib;TKBO.lib;TKBool.lib;TKBRep.lib;TKCAF.lib;TKCDF.lib;TKDCAF.lib;TKDE.lib;TKDECascade.lib;TKDEGLTF.lib;TKDEIGES.lib;TKDEOBJ.lib;TKDEPLY.lib;TKDESTEP.lib;TKDESTL.lib;TKDEVRML.lib;TKDraw.lib;TKernel.lib;TKExpress.lib;TKFeat.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKHLR.lib;TKIVtk.lib;TKIVtkDraw.lib;TKLCAF.lib;TKMath.lib;TKMesh.lib;TKMeshVS.lib;TKOffset.lib;TKOpenGl.lib;TKOpenGles.lib;TKOpenGlesTest.lib;TKOpenGlTest.lib;TKPrim.lib;TKQADraw.lib;TKRWMesh.lib;TKService.lib;TKShHealing.lib;TKStd.lib;TKStdL.lib;TKTObj.lib;TKTObjDRAW.lib;TKTopAlgo.lib;TKTopTest.lib;TKV3d.lib;TKVCAF.lib;TKViewerTest.lib;TKXCAF.lib;TKXDEDRAW.lib;TKXMesh.lib;TKXml.lib;TKXmlL.lib;TKXmlTObj.lib;TKXmlXCAF.lib;TKXSBase.lib;TKXSDRAW.lib;TKXSDRAWDE.lib;TKXSDRAWGLTF.lib;TKXSDRAWIGES.lib;TKXSDRAWOBJ.lib;TKXSDRAWPLY.lib;TKXSDRAWSTEP.lib;TKXSDRAWSTL.lib;TKXSDRAWVRML.lib;Qt5Xlsx.lib;Qt5Xlsxd.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgUtil.lib;osgGA.lib;osgViewer.lib;osgText.lib;osgManipulator.lib;osgFX.lib;%(AdditionalDependencies);..\3part\m_lib\MRSP_OSG.lib;..\3part\m_lib\OSG.lib;..\3part\m_lib\baseFile2.lib;..\3part\m_lib\PQP_Test.lib;..\3part\m_lib\Offline programme.lib;$(OutDir)PathPlan.lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>TKBin.lib;TKBinL.lib;TKBinTObj.lib;TKBinXCAF.lib;TKBO.lib;TKBool.lib;TKBRep.lib;TKCAF.lib;TKCDF.lib;TKDCAF.lib;TKDE.lib;TKDECascade.lib;TKDEGLTF.lib;TKDEIGES.lib;TKDEOBJ.lib;TKDEPLY.lib;TKDESTEP.lib;TKDESTL.lib;TKDEVRML.lib;TKDraw.lib;TKernel.lib;TKExpress.lib;TKFeat.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKHLR.lib;TKIVtk.lib;TKIVtkDraw.lib;TKLCAF.lib;TKMath.lib;TKMesh.lib;TKMeshVS.lib;TKOffset.lib;TKOpenGl.lib;TKOpenGles.lib;TKOpenGlesTest.lib;TKOpenGlTest.lib;TKPrim.lib;TKQADraw.lib;TKRWMesh.lib;TKService.lib;TKShHealing.lib;TKStd.lib;TKStdL.lib;TKTObj.lib;TKTObjDRAW.lib;TKTopAlgo.lib;TKTopTest.lib;TKV3d.lib;TKVCAF.lib;TKViewerTest.lib;TKXCAF.lib;TKXDEDRAW.lib;TKXMesh.lib;TKXml.lib;TKXmlL.lib;TKXmlTObj.lib;TKXmlXCAF.lib;TKXSBase.lib;TKXSDRAW.lib;TKXSDRAWDE.lib;TKXSDRAWGLTF.lib;TKXSDRAWIGES.lib;TKXSDRAWOBJ.lib;TKXSDRAWPLY.lib;TKXSDRAWSTEP.lib;TKXSDRAWSTL.lib;TKXSDRAWVRML.lib;Qt5Xlsx.lib;Qt5Xlsxd.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgUtil.lib;osgGA.lib;osgViewer.lib;osgText.lib;osgManipulator.lib;osgFX.lib;%(AdditionalDependencies);..\3part\m_lib\MRSP_OSG.lib;..\3part\m_lib\OSG.lib;..\3part\m_lib\baseFile2.lib;..\3part\m_lib\PQP_Test.lib;..\3part\m_lib\Offline programme.lib;"D:\test\3part\m_lib\k4a.lib";"D:\test\3part\m_lib\k4arecord.lib";"D:\test\3part\m_lib\UR5DTCore.lib";$(OutDir)PathPlan.lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <AdditionalOptions>/FS /utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>"D:\test\3part\Qt5.14.2\5.14.2\msvc2017_64\bin\windeployqt.exe" "$(OutDir)$(TargetFileName)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <QtRcc Include="QtWidgetsApplication2.qrc" />
+    <QtUic Include="QtWidgetsApplication2.ui" />
+    <QtMoc Include="QtWidgetsApplication2.h" />
+    <ClCompile Include="BallScan.cpp" />
+    <ClCompile Include="JBIExporter.cpp" />
+    <ClCompile Include="RemoveTurntableEC.cpp" />
+    <ClCompile Include="process_line_result.cpp" />
+    <ClCompile Include="path_rrt_splice.cpp" />
+    <ClCompile Include="process_line_result_bindings.cpp" />
+    <ClCompile Include="process_line_result_qtapp2_adapter.cpp" />
+    <ClCompile Include="QtWidgetsApplication2.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SurfacePointGen.cpp" />
+    <ClCompile Include="RobotReachability.cpp" />
+    <ClCompile Include="trajectory.cpp" />
+    <ClCompile Include="two_orientation_interpolation.cpp" />
+    <ClCompile Include="ViewpointPlanner.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BallScan.h" />
+    <ClInclude Include="JBIExporter.h" />
+    <ClInclude Include="RemoveTurntableEC.h" />
+    <ClInclude Include="process_line_result.h" />
+    <ClInclude Include="path_rrt_splice.h" />
+    <ClInclude Include="process_line_result_qtapp2_adapter.h" />
+    <ClInclude Include="SurfacePointGen.h" />
+    <ClInclude Include="SurfacePointGenerator.h" />
+    <ClInclude Include="trajectory.h" />
+    <ClInclude Include="two_orientation_interpolation.h" />
+    <ClInclude Include="Types.h" />
+    <ClInclude Include="RobotConfig.h" />
+    <ClInclude Include="RobotReachability.h" />
+    <ClInclude Include="ViewpointPlanner.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

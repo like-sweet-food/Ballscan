@@ -1,0 +1,50 @@
+# Visual Studio and Qt build output
+.vs/
+.claude/
+%SystemDrive%/
+x64/
+**/x64/
+Debug/
+Release/
+**/Debug/
+**/Release/
+build/
+build-*/
+out/
+outputs/
+packages/
+ipch/
+
+# IDE/user-local files
+*.user
+*.suo
+*.VC.db
+*.VC.VC.opendb
+*.opensdf
+*.sdf
+
+# Compiled objects, libraries, and debug symbols
+*.obj
+*.o
+*.lib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.ipdb
+*.iobj
+*.pch
+*.idb
+*.exp
+
+# Temporary and generated data
+*.tmp
+*.log
+*.tlog
+*.lastbuildstate
+*.bak
+
+# Archives and packaged binaries
+*.rar
+*.7z
+*.zip
